@@ -7,7 +7,6 @@ const {handleMongooseError} = require("../utils");
 const emailRegexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 const userSchema = new Schema ({
-
     password: {
         type: String,
         required: [true, 'Password is required'],
@@ -30,6 +29,10 @@ const userSchema = new Schema ({
     owner: {
         type: Schema.Types.ObjectId,
         ref: 'user',
+    },
+    avatarURL: {
+        type: String,
+        required: true,
     }
 }, {versionKey: false, timestamps: true});
 
